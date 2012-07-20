@@ -1,0 +1,13 @@
+Config { font = "xft:Dejavu Sans Mono-9"
+       , bgColor = "#151515"
+       , fgColor = "#D7D0C7"
+       , position = TopP 0 100
+       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Date "%a %b %_d %Y %H:%M" "date" 10
+                    , Run StdinReader
+                    , Run Com "/home/maarten/bin/cmus_current_track.sh" [] "cmus" 100
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{<fc=yellow>%cmus%</fc>    %cpu%    %date%"
+       }
